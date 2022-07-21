@@ -12,6 +12,7 @@ class FullProductViewController: UIViewController {
     @IBOutlet var fullProductCollectionView: UICollectionView!
     
     var products = [Product]()
+    var indexPath = IndexPath(item: 0, section: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,9 @@ class FullProductViewController: UIViewController {
         self.fullProductCollectionView.dataSource = self
         self.fullProductCollectionView.delegate = self
         self.fullProductCollectionView.register(UINib(nibName: "FullProductCell", bundle: nil), forCellWithReuseIdentifier: "FullProductCell")
+        self.fullProductCollectionView.performBatchUpdates(nil) { (_) in
+            self.fullProductCollectionView.scrollToItem(at: self.indexPath, at: .centeredHorizontally, animated: false)
+        }
     }
     
 }

@@ -146,12 +146,13 @@ extension String {
 }
 
 extension MenuViewController {
-    func fullScreenHandlerFor(cell: ProductCell) {
+    func fullScreenHandlerFor(cell: ProductCell, indexProduct: Int) {
         if let indexPath = self.menuCollectionView.indexPath(for: cell) {
             let products = self.group.groups![indexPath.item].products!
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "FullProductViewController") as! FullProductViewController
             vc.products = products
+            vc.indexPath = IndexPath(row: indexProduct, section: 0)
             self.navigationController?.pushViewController(vc, animated: true)
         }
         print("fullScreenHandler")

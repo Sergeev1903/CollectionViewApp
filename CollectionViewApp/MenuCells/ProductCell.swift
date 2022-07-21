@@ -14,7 +14,7 @@ class ProductCell: UICollectionViewCell {
     private var products = [Product]()
     
     //Переход спомощью обработчика (handler)
-    var fullScreenHandler: ((_ cell: ProductCell) -> Void)?
+    var fullScreenHandler: ((_ cell: ProductCell, _ indexProduct: Int) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -55,7 +55,7 @@ extension ProductCell: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.productTableView.deselectRow(at: indexPath, animated: true)
-        fullScreenHandler?(self)
+        fullScreenHandler?(self, indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
