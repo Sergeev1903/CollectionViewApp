@@ -18,6 +18,9 @@
 		1D95F7F12885FEC10073E51C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D95F7EF2885FEC10073E51C /* Main.storyboard */; };
 		1D95F7F32885FEC20073E51C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D95F7F22885FEC20073E51C /* Assets.xcassets */; };
 		1D95F7F62885FEC20073E51C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D95F7F42885FEC20073E51C /* LaunchScreen.storyboard */; };
+		1DB9EDD4288962F10059F90E /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9EDD2288962F10059F90E /* MainCell.swift */; };
+		1DB9EDD5288962F10059F90E /* MainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DB9EDD3288962F10059F90E /* MainCell.xib */; };
+		1DE06E2E28895C5100580E31 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE06E2D28895C5100580E31 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		1D95F7F22885FEC20073E51C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D95F7F52885FEC20073E51C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D95F7F72885FEC20073E51C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DB9EDD2288962F10059F90E /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		1DB9EDD3288962F10059F90E /* MainCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCell.xib; sourceTree = "<group>"; };
+		1DE06E2D28895C5100580E31 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,8 @@
 				1D634CA52886B1FE007206E5 /* ProductCell.xib */,
 				1D634CAA28870580007206E5 /* GroupCell.swift */,
 				1D634CAB28870580007206E5 /* GroupCell.xib */,
+				1DB9EDD2288962F10059F90E /* MainCell.swift */,
+				1DB9EDD3288962F10059F90E /* MainCell.xib */,
 			);
 			path = MenuCells;
 			sourceTree = "<group>";
@@ -77,12 +85,13 @@
 		1D95F7E82885FEC10073E51C /* CollectionViewApp */ = {
 			isa = PBXGroup;
 			children = (
-				1D634CA32886B19D007206E5 /* MenuCells */,
+				1D634CA82886B866007206E5 /* Menu.swift */,
 				1D95F7E92885FEC10073E51C /* AppDelegate.swift */,
 				1D95F7EB2885FEC10073E51C /* SceneDelegate.swift */,
+				1DE06E2D28895C5100580E31 /* MainViewController.swift */,
 				1D95F7ED2885FEC10073E51C /* MenuViewController.swift */,
-				1D634CA82886B866007206E5 /* Menu.swift */,
 				1D95F7EF2885FEC10073E51C /* Main.storyboard */,
+				1D634CA32886B19D007206E5 /* MenuCells */,
 				1D95F7F22885FEC20073E51C /* Assets.xcassets */,
 				1D95F7F42885FEC20073E51C /* LaunchScreen.storyboard */,
 				1D95F7F72885FEC20073E51C /* Info.plist */,
@@ -150,6 +159,7 @@
 			files = (
 				1D95F7F62885FEC20073E51C /* LaunchScreen.storyboard in Resources */,
 				1D634CA72886B1FE007206E5 /* ProductCell.xib in Resources */,
+				1DB9EDD5288962F10059F90E /* MainCell.xib in Resources */,
 				1D95F7F32885FEC20073E51C /* Assets.xcassets in Resources */,
 				1D634CAD28870580007206E5 /* GroupCell.xib in Resources */,
 				1D95F7F12885FEC10073E51C /* Main.storyboard in Resources */,
@@ -163,11 +173,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DE06E2E28895C5100580E31 /* MainViewController.swift in Sources */,
 				1D95F7EE2885FEC10073E51C /* MenuViewController.swift in Sources */,
 				1D634CA62886B1FE007206E5 /* ProductCell.swift in Sources */,
 				1D95F7EA2885FEC10073E51C /* AppDelegate.swift in Sources */,
 				1D634CAC28870580007206E5 /* GroupCell.swift in Sources */,
 				1D95F7EC2885FEC10073E51C /* SceneDelegate.swift in Sources */,
+				1DB9EDD4288962F10059F90E /* MainCell.swift in Sources */,
 				1D634CA92886B867007206E5 /* Menu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
