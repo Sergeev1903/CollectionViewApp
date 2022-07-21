@@ -13,7 +13,13 @@ class MenuViewController: UIViewController {
     @IBOutlet var groupsCollectionView: UICollectionView!
     
     var group: Group!
-    var selectedGroup: Group?
+    var selectedGroup: Group? {
+        didSet {
+            if let selectedGroup = selectedGroup {
+                self.title = selectedGroup.name
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,11 +64,16 @@ extension MenuViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         if collectionView == groupsCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GroupCell", for: indexPath) as! GroupCell
-            let group = self.group.groups![indexPath.item]
-            cell.setUpCell(group: group)
             
-            cell.nameGroup.textColor = .darkGray
-            cell.layer.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8032129553)
+            
+            let group = self.group.groups![indexPath.item]
+            
+            let isSelected = group.name == selectedGroup?.name
+            
+            cell.setUpCell(group: group, isSelected: isSelected)
+            
+//            cell.nameGroup.textColor = .darkGray
+//            cell.layer.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8032129553)
             cell.layer.cornerRadius = 15
             return cell
         } else {
@@ -109,6 +120,10 @@ extension MenuViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         if collectionView == groupsCollectionView {
             self.selectedGroup = self.group.groups![indexPath.item]
+            
+            self.groupsCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            self.groupsCollectionView.reloadData()
+            
             // Scroll collection items to start when change collection group
             self.menuCollectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
             self.menuCollectionView.reloadData()
