@@ -10,50 +10,30 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ProductCell" customModule="CollectionViewApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="210" height="285"/>
+            <rect key="frame" x="0.0" y="0.0" width="459" height="329"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="210" height="285"/>
+                <rect key="frame" x="0.0" y="0.0" width="459" height="329"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9CZ-Nl-aQU">
-                        <rect key="frame" x="0.0" y="0.0" width="210" height="201"/>
-                        <color key="backgroundColor" red="1" green="0.58431372549019611" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jrt-zh-qnM">
-                        <rect key="frame" x="8" y="209" width="194" height="33.5"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyk-Pu-rD8">
-                        <rect key="frame" x="8" y="250.5" width="194" height="26.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="r86-ih-eGA">
+                        <rect key="frame" x="0.0" y="0.0" width="459" height="329"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tableView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="Jrt-zh-qnM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="5PT-vI-cvb"/>
-                <constraint firstItem="9CZ-Nl-aQU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Cad-nH-bZ7"/>
-                <constraint firstAttribute="trailing" secondItem="9CZ-Nl-aQU" secondAttribute="trailing" id="QOV-gi-GKj"/>
-                <constraint firstItem="gyk-Pu-rD8" firstAttribute="top" secondItem="Jrt-zh-qnM" secondAttribute="bottom" constant="8" id="Qlk-AA-umi"/>
-                <constraint firstAttribute="trailing" secondItem="gyk-Pu-rD8" secondAttribute="trailing" constant="8" id="RXs-xe-ttT"/>
-                <constraint firstAttribute="bottom" secondItem="gyk-Pu-rD8" secondAttribute="bottom" constant="8" id="V8U-AQ-IkF"/>
-                <constraint firstAttribute="trailing" secondItem="Jrt-zh-qnM" secondAttribute="trailing" constant="8" id="Vel-hS-xhT"/>
-                <constraint firstItem="gyk-Pu-rD8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="p7f-ti-EDS"/>
-                <constraint firstItem="Jrt-zh-qnM" firstAttribute="top" secondItem="9CZ-Nl-aQU" secondAttribute="bottom" constant="8" id="rRx-bf-ra4"/>
-                <constraint firstItem="9CZ-Nl-aQU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="yDi-l7-HYb"/>
+                <constraint firstItem="r86-ih-eGA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="2QB-fx-Kjs"/>
+                <constraint firstAttribute="trailing" secondItem="r86-ih-eGA" secondAttribute="trailing" id="7lK-nD-gN1"/>
+                <constraint firstItem="r86-ih-eGA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="NYB-Wl-btU"/>
+                <constraint firstAttribute="bottom" secondItem="r86-ih-eGA" secondAttribute="bottom" id="h3k-MW-MxV"/>
             </constraints>
-            <size key="customSize" width="210" height="285"/>
+            <size key="customSize" width="469" height="240"/>
             <connections>
-                <outlet property="productImage" destination="9CZ-Nl-aQU" id="vNa-G0-H6Q"/>
-                <outlet property="productName" destination="Jrt-zh-qnM" id="RHk-A1-T4e"/>
-                <outlet property="productPrice" destination="gyk-Pu-rD8" id="XVb-Yb-DDd"/>
+                <outlet property="productTableView" destination="r86-ih-eGA" id="u6V-zt-Gmy"/>
             </connections>
-            <point key="canvasLocation" x="188.40579710144928" y="74.665178571428569"/>
+            <point key="canvasLocation" x="250.00000000000003" y="35.15625"/>
         </collectionViewCell>
     </objects>
 </document>

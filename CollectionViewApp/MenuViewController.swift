@@ -78,13 +78,11 @@ extension MenuViewController: UICollectionViewDataSource, UICollectionViewDelega
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ProductCell
+            let products = self.group.groups![indexPath.item].products
             let product = selectedGroup!.products![indexPath.item]
             
-            cell.setUpCell(product: product)
-            cell.productImage.layer.cornerRadius = 50
-            cell.productName.textColor = .white
-            cell.productPrice.textColor = .white
-            
+            cell.setUpCell(products: products!)
+           
             return cell
         }
     }
