@@ -17,16 +17,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizza_background" translatesAutoresizingMaskIntoConstraints="NO" id="VKj-vc-3nM">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="-1" width="414" height="897"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collection View App" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1k-VX-cjM">
+                                <rect key="frame" x="36" y="429" width="342" height="38"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Demo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HCQ-GZ-Rni">
+                                <rect key="frame" x="167" y="475" width="80.5" height="39.5"/>
+                                <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="VKj-vc-3nM" secondAttribute="bottom" id="54q-wq-gZj"/>
                             <constraint firstItem="VKj-vc-3nM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7rT-O5-gaE"/>
-                            <constraint firstItem="VKj-vc-3nM" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="ZyB-sX-9tW"/>
+                            <constraint firstItem="HCQ-GZ-Rni" firstAttribute="top" secondItem="n1k-VX-cjM" secondAttribute="bottom" constant="8" id="GW6-63-35N"/>
                             <constraint firstItem="VKj-vc-3nM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="af4-fn-iDO"/>
+                            <constraint firstItem="HCQ-GZ-Rni" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="agh-aw-Prx"/>
+                            <constraint firstItem="n1k-VX-cjM" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="aoy-Mc-5w6"/>
+                            <constraint firstItem="n1k-VX-cjM" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="t7O-Qz-4fM"/>
+                            <constraint firstItem="VKj-vc-3nM" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="-1" id="vrd-T5-fjg"/>
                         </constraints>
                     </view>
                 </viewController>
