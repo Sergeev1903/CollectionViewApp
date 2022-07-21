@@ -21,7 +21,7 @@ class MainViewController: UIViewController {
     }
 }
 
-extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return menu.groups.count
     }
@@ -35,7 +35,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width / 2, height: 120)
+        return CGSize(width: collectionView.frame.width / 2, height: 150)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

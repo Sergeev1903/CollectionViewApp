@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Menu-->
         <scene sceneID="3N6-j5-T3I">
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="4s0-zI-R3p" customClass="MainViewController" customModule="CollectionViewApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -24,22 +24,12 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Jip-PC-h2Z">
-                                    <size key="itemSize" width="128" height="124"/>
+                                    <size key="itemSize" width="0.0" height="0.0"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="pIo-ff-zKm">
-                                        <rect key="frame" x="0.0" y="0.0" width="124" height="124"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="M54-qr-Or4">
-                                            <rect key="frame" x="0.0" y="0.0" width="124" height="124"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="124" height="124"/>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="piC-De-4nj"/>
@@ -55,7 +45,7 @@
                             <constraint firstItem="rJO-Lp-vJ5" firstAttribute="trailing" secondItem="piC-De-4nj" secondAttribute="trailing" id="rGQ-UE-zIs"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Squ-NT-pbP"/>
+                    <navigationItem key="navigationItem" title="Menu" id="Squ-NT-pbP"/>
                     <connections>
                         <outlet property="mainCollectionView" destination="PhU-ki-ely" id="AbV-Nv-bTI"/>
                     </connections>
@@ -100,7 +90,7 @@
                                 </cells>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kDU-Cd-uii">
-                                <rect key="frame" x="0.0" y="110" width="414" height="752"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="3Mq-wb-n8b">
                                     <size key="itemSize" width="128" height="124"/>
@@ -129,7 +119,7 @@
                             <constraint firstItem="kDU-Cd-uii" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Fbm-Al-c9u"/>
                             <constraint firstItem="8F2-Ta-MPu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Gmg-8n-f3u"/>
                             <constraint firstAttribute="bottom" secondItem="2kQ-TR-c6C" secondAttribute="bottom" id="i6V-pg-Q33"/>
-                            <constraint firstItem="kDU-Cd-uii" firstAttribute="top" secondItem="8F2-Ta-MPu" secondAttribute="bottom" constant="16" id="j7f-Pn-GbD"/>
+                            <constraint firstItem="kDU-Cd-uii" firstAttribute="top" secondItem="8F2-Ta-MPu" secondAttribute="bottom" id="j7f-Pn-GbD"/>
                             <constraint firstItem="8F2-Ta-MPu" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nmj-k6-tBE"/>
                             <constraint firstItem="kDU-Cd-uii" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pEU-1s-EaI"/>
                             <constraint firstItem="2kQ-TR-c6C" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="s49-kk-TeG"/>
@@ -153,6 +143,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OHx-PP-scS">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
