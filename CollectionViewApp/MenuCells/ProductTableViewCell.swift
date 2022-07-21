@@ -23,7 +23,6 @@ class ProductTableViewCell: UITableViewCell {
         selectedCustomView.layer.cornerRadius = 15
         self.selectedBackgroundView = selectedCustomView
         
-        
     }
     
     func setUpCell(product: Product) {
@@ -34,18 +33,18 @@ class ProductTableViewCell: UITableViewCell {
     }
 }
 
-extension ProductTableViewCell {
-    override var frame: CGRect {
-        get {
-            return super.frame
-        }
-        set (newFrame) {
-            var frame =  newFrame
-            frame.origin.y += 10
-            frame.origin.x += 10
-            frame.size.height -= 10
-            frame.size.width -= 20
-            super.frame = frame
-        }
-    }
-}
+//extension ProductTableViewCell {
+//    override var frame: CGRect {
+//        get {
+//            return super.frame
+//        }
+//        set (newFrame) {
+//            var frame =  newFrame
+//            frame.origin.y += 10
+//            frame.origin.x += 10
+//            frame.size.height -= 15
+//            frame.size.width -= 2 * 10
+//            super.frame = frame
+//        }
+//    }
+//}

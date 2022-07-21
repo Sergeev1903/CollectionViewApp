@@ -38,6 +38,22 @@ class MenuViewController: UIViewController {
             selectedGroup = group
         }
     }
+    
+    //When scroll products - grop switch on the same products group!
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if scrollView == menuCollectionView {
+            let cells = menuCollectionView.visibleCells
+            if let cell = cells.first,
+               let indexPath = self.menuCollectionView.indexPath(for: cell) {
+                
+                self.selectedGroup = self.group.groups![indexPath.item]
+                
+                self.groupsCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+                self.groupsCollectionView.reloadData()
+            }
+            
+        }
+    }
 }
 
 extension MenuViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -45,19 +61,12 @@ extension MenuViewController: UICollectionViewDataSource, UICollectionViewDelega
     //MARK: UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        if collectionView == groupsCollectionView {
-            if let groups = group.groups {
-                return groups.count
-            } else {
-                return 0
-            }
+        if let groups = group.groups {
+            return groups.count
         } else {
-            if let products = selectedGroup?.products {
-                return products.count
-            } else {
-                return 0
-            }
+            return 0
         }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -71,18 +80,17 @@ extension MenuViewController: UICollectionViewDataSource, UICollectionViewDelega
             let isSelected = group.name == selectedGroup?.name
             
             cell.setUpCell(group: group, isSelected: isSelected)
-            
-//            cell.nameGroup.textColor = .darkGray
-//            cell.layer.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8032129553)
             cell.layer.cornerRadius = 15
             return cell
+            
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ProductCell
             let products = self.group.groups![indexPath.item].products
             let product = selectedGroup!.products![indexPath.item]
             
+            cell.fullScreenHandler = fullScreenHandlerFor
             cell.setUpCell(products: products!)
-           
+            
             return cell
         }
     }
@@ -123,7 +131,7 @@ extension MenuViewController: UICollectionViewDataSource, UICollectionViewDelega
             self.groupsCollectionView.reloadData()
             
             // Scroll collection items to start when change collection group
-            self.menuCollectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
+            self.menuCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
             self.menuCollectionView.reloadData()
         }
     }
@@ -134,5 +142,18 @@ extension String {
         let fontAttributes = [NSAttributedString.Key.font: font]
         let size = (self as NSString).size(withAttributes: fontAttributes)
         return ceil(size.width)
+    }
+}
+
+extension MenuViewController {
+    func fullScreenHandlerFor(cell: ProductCell) {
+        if let indexPath = self.menuCollectionView.indexPath(for: cell) {
+            let products = self.group.groups![indexPath.item].products!
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "FullProductViewController") as! FullProductViewController
+            vc.products = products
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        print("fullScreenHandler")
     }
 }
